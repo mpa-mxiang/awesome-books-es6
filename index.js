@@ -1,26 +1,22 @@
-import { Book, BookCollection } from "./modules/book.js";
-import { displayBooks, addBook, removeBook } from "./modules/bookCollection.js";
+import { BookCollection } from './modules/BookCollection.js';
+import './modules/storage.js';
+import { changePage } from './modules/nav.js';
 
-// Create a new instance of the BookCollection class
 const myBookCollection = new BookCollection();
+myBookCollection.displayBooks();
 
-// Add event listener for form submission
-const form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
+const form = document.querySelector('#book-form');
+form.addEventListener('submit', (e) => {
   e.preventDefault();
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  addBook(myBookCollection, title, author);
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  myBookCollection.addBook(title, author);
 });
 
-// Add event listener for remove button clicks (using event delegation)
-const bookListElement = document.getElementById("bookList");
-bookListElement.addEventListener("click", (e) => {
-  if (e.target.classList.contains("removeButton")) {
-    const title = e.target.dataset.title;
-    removeBook(myBookCollection, title);
-  }
+const pageLinks = document.querySelectorAll('[data-section]');
+pageLinks.forEach((link) => {
+  link.onclick = (event) => {
+    event.preventDefault();
+    changePage(link.dataset.section);
+  };
 });
-
-// Display the initial book collection
-displayBooks(myBookCollection);

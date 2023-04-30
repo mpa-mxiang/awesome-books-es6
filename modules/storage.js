@@ -22,3 +22,5 @@ books.addEventListener('submit', () => {
   bookData.author = '';
   localStorage.setItem('bookData', JSON.stringify(bookData));
 });
+
+export { bookData };

@@ -1,3 +1,4 @@
+import { DateTime } from "luxon";
 const today = document.getElementById('today');
 today.textContent = DateTime.now();
 
@@ -20,3 +21,5 @@ pageLinks.forEach((link) => {
     changePage(link.dataset.section);
   };
 });
+
+export { changePage };
