@@ -1,4 +1,4 @@
-import BookCollection from './modules/BookCollection.js';
+import BookCollection from './modules/bookCollection.js';
 import changePage from './modules/nav.js';
 /* eslint-disable no-unused-vars */
 import bookData from './modules/storage.js';
