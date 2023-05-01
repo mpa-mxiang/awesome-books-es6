@@ -1,9 +1,8 @@
-import { DateTime } from 'luxon';
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
 
 let today = document.getElementById('today');
-const todayEl = document.getElementById('today');
-
 today = DateTime.now();
+const todayEl = document.getElementById('today');
 
 function displayTime() {
   today = DateTime.now();
@@ -22,6 +21,7 @@ function changePage(link) {
 }
 
 const pageLinks = document.querySelectorAll('[data-section]');
+
 pageLinks.forEach((link) => {
   link.onclick = (event) => {
     event.preventDefault();
