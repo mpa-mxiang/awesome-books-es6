@@ -1,6 +1,5 @@
-import { BookCollection } from './modules/BookCollection.js';
-import './modules/storage.js';
-import { changePage } from './modules/nav.js';
+import BookCollection from './modules/BookCollection.js';
+import changePage from './modules/nav.js';
 
 const myBookCollection = new BookCollection();
 myBookCollection.displayBooks();

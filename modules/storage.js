@@ -23,4 +23,4 @@ books.addEventListener('submit', () => {
   localStorage.setItem('bookData', JSON.stringify(bookData));
 });
 
-export { bookData };
+export default bookData;

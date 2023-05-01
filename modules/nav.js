@@ -1,7 +1,14 @@
-import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
+import { DateTime } from 'luxon';
 
-const today = document.getElementById('today');
-today.textContent = DateTime.now();
+let today = document.getElementById('today');
+const todayEl = document.getElementById('today');
+
+today = DateTime.now();
+
+function displayTime() {
+  today = DateTime.now();
+  todayEl.textContent = today.toLocaleString(DateTime.DATETIME_FULL);
+}
 
 function changePage(link) {
   const sections = document.querySelectorAll('section');
@@ -15,7 +22,6 @@ function changePage(link) {
 }
 
 const pageLinks = document.querySelectorAll('[data-section]');
-
 pageLinks.forEach((link) => {
   link.onclick = (event) => {
     event.preventDefault();
@@ -23,4 +29,7 @@ pageLinks.forEach((link) => {
   };
 });
 
-export { changePage };
+// Update the current time every second
+setInterval(displayTime, 1000);
+
+export default changePage;
