@@ -1,7 +1,7 @@
 import { DateTime } from 'https://moment.github.io/luxon/es6/luxon.js';
+
 const today = document.getElementById('today');
 today.textContent = DateTime.now();
-
 
 function changePage(link) {
   const sections = document.querySelectorAll('section');
