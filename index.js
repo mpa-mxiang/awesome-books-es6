@@ -1,5 +1,7 @@
 import BookCollection from './modules/BookCollection.js';
 import changePage from './modules/nav.js';
+/* eslint-disable no-unused-vars */
+import bookData from './modules/storage.js';
 
 const myBookCollection = new BookCollection();
 myBookCollection.displayBooks();
