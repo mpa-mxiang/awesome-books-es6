@@ -43,7 +43,8 @@
     <li><a href="https://www.w3schools.com/css/default.asp">CSS</a></li>
     <li><a href="https://www.w3schools.com/javascript/default.asp">JavaScript</a></li>
     <li><a href="https://www.geeksforgeeks.org/dom-document-object-model/">DOM</a>
-    <li><a href="https://www.geeksforgeeks.org/dom-document-object-model/">ES6</a>
+    <li><a href="https://www.geeksforgeeks.org/dom-document-object-model/">ES6 & Modules</a>
+
     </li>
   </ul>
 </details>
