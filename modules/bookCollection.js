@@ -3,7 +3,7 @@ export default class BookCollection {
     this.bookList = JSON.parse(localStorage.getItem('bookCollection')) || [];
   }
 
-  displayBooks() {
+  displayBooks = () => {
     const bookListElement = document.getElementById('bookList');
     bookListElement.innerHTML = '';
     this.bookList.forEach((book) => {
@@ -14,7 +14,7 @@ export default class BookCollection {
     });
   }
 
-  addBook(title, author) {
+  addBook = (title, author) => {
     const book = { title, author };
     this.bookList.push(book);
     localStorage.setItem('bookCollection', JSON.stringify(this.bookList));
@@ -23,7 +23,7 @@ export default class BookCollection {
     document.getElementById('author').value = '';
   }
 
-  removeBook(title) {
+  removeBook = (title) => {
     this.bookList = this.bookList.filter((book) => book.title !== title);
     localStorage.setItem('bookCollection', JSON.stringify(this.bookList));
     this.displayBooks();

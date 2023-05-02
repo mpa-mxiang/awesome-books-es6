@@ -1,15 +1,14 @@
 import { DateTime } from '../node_modules/luxon/src/luxon.js';
 
 let today = document.getElementById('today');
-today = DateTime.now();
 const todayEl = document.getElementById('today');
 
-function displayTime() {
+const displayTime = () => {
   today = DateTime.now();
   todayEl.textContent = today.toLocaleString(DateTime.DATETIME_FULL);
-}
+};
 
-function changePage(link) {
+const changePage = (link) => {
   const sections = document.querySelectorAll('section');
   sections.forEach((section) => {
     if (section.classList.contains(link)) {
@@ -18,7 +17,7 @@ function changePage(link) {
       section.classList.add('hidden');
     }
   });
-}
+};
 
 const pageLinks = document.querySelectorAll('[data-section]');
 

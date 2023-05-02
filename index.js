@@ -1,6 +1,5 @@
 import BookCollection from './modules/bookCollection.js';
 import changePage from './modules/nav.js';
-/* eslint-disable no-unused-vars */
 import bookData from './modules/storage.js';
 
 const myBookCollection = new BookCollection();
@@ -21,3 +20,9 @@ pageLinks.forEach((link) => {
     changePage(link.dataset.section);
   };
 });
+
+// pre-fill the form with saved data
+if (bookData.title && bookData.author) {
+  document.getElementById('title').value = bookData.title;
+  document.getElementById('author').value = bookData.author;
+}
