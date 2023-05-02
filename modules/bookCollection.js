@@ -13,7 +13,7 @@ export default class BookCollection {
       bookListElement.appendChild(bookDiv);
     });
   }
-  
+
   addBook = (title, author) => {
     const book = { title, author };
     this.bookList.push(book);
@@ -22,11 +22,10 @@ export default class BookCollection {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
   }
-  
+
   removeBook = (title) => {
     this.bookList = this.bookList.filter((book) => book.title !== title);
     localStorage.setItem('bookCollection', JSON.stringify(this.bookList));
     this.displayBooks();
   }
-  
 }
